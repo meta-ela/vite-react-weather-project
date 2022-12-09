@@ -1,19 +1,35 @@
-import { API_KEY } from '../../api';
-import { useState, useEffect } from 'react';
+/* attenzione proprio css */
+import "./mainWeather.css"
 
-function MainWeather() {
-    const [city, setCity] = useState("Bologna");
+function MainWeather(props) {
 
-    useEffect(() => {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`)
-        .then((response) => console.log(response.json()));
+    const getTodaysDate = () => {
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
 
-        console.log('hello');
-    }, [city]);
+        today = mm + '/' + dd + '/' + yyyy;
+        return today;
+    }
 
     return (
-        <div className="mainWeather">
-
+        <div className="mainWeather container py-4">
+            {!props.loaded ? "" :
+                <div>
+                    <h2>
+                        {props.data.name}
+                    </h2>
+                    <div>
+                        {getTodaysDate()}
+                    </div>
+                    <div>
+                        {props.data.weather[0].main}
+                    </div>
+                    <div>
+                        {Math.round(props.data.main.temp)}° C
+                    </div>
+                </div>}
         </div>
     );
 }
