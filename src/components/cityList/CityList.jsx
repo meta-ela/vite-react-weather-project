@@ -1,9 +1,9 @@
-/* attenzuione import css */
+import './cityList.css';
 
 function CityList() {
     return (
-        <div className="cityList">
-        citylist
+        <div className="cityList debugBorder">
+            qui la CityList
         </div>
     );
 }

@@ -1,7 +1,9 @@
 import { API_KEY } from '../../api';
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
-/* import CityList from './CityList'; */
+import './container.css';
+
+import CityList from '../cityList/CityList';
 import MainWeather from '../mainWeather/MainWeather';
 import SearchAndLocalization from '../searchAndLocalization/SearchAndLocalization';
 import HourlyForecast from '../hourlyForecast/HourlyForecast';
@@ -12,24 +14,28 @@ function Container() {
     const [data, setData] = useState({});
     const [loaded, setLoaded] = useState(false);
     const [coord, setCoord] = useState({});
-
+    const [tempNow, setTempNow] = useState(null);
+    /* console.log(data); */
 
     useEffect(() => {
+        /* console.log('logging use effect container') */
         getCityWeather();
     }, []);
-    
+
     const getCityWeather = () => {
+        /* console.log('logging in getCityWeather') */
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=it`)
             .then((response) => {
-                if(!response.ok) {
+                if (!response.ok) {
                     throw new Error("Inserisci una città valida");
                 }
                 const res = response.json();
-                return res 
+                return res
             })
             .then(res => {
-                setData(res)
-                setCoord({lat: res.coord.lat, lon: res.coord.lon})
+                setData(res);
+                setCoord({ lat: res.coord.lat, lon: res.coord.lon });
+                setTempNow(Math.round(res.main.temp))
                 setLoaded(true);
             })
             .catch((err) => {
@@ -40,26 +46,39 @@ function Container() {
 
     return (
         <div className="app">
-            <MainWeather 
-            data={data}
-            loaded={loaded}
-            ></MainWeather>
+            <div className="row">
+                <div className="col-8">
+                    <MainWeather
+                        data={data}
+                        loaded={loaded}
+                    ></MainWeather>
+                </div>
+                <div className="col-4">
+                    <CityList></CityList>
+                </div>
+            </div>
 
-            <SearchAndLocalization 
-            onHandleSubmit={getCityWeather}
-            city={city}
-            setCity={setCity}
-            ></SearchAndLocalization>
+            <div className="row">
+                <div className="col-8">
+                    <HourlyForecast
+                        coord={coord}
+                        loaded={loaded}
+                        tempNow={tempNow}
+                    ></HourlyForecast>
 
-            <HourlyForecast
-            coord={coord}
-            loaded={loaded}
-            ></HourlyForecast>
-
-            <PeriodForecast
-            coord={coord}
-            loaded={loaded}
-            ></PeriodForecast>
+                    {/* <PeriodForecast
+                        coord={coord}
+                        loaded={loaded}
+                    ></PeriodForecast> */}
+                </div>
+                <div className="col-4">
+                    <SearchAndLocalization
+                        onHandleSubmit={getCityWeather}
+                        city={city}
+                        setCity={setCity}
+                    ></SearchAndLocalization>
+                </div>
+            </div>
         </div>
     );
 }

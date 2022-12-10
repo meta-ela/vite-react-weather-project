@@ -9,14 +9,14 @@ function MainWeather(props) {
         var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
         var yyyy = today.getFullYear();
 
-        today = mm + '/' + dd + '/' + yyyy;
+        today = dd + '/' + mm + '/' + yyyy;
         return today;
     }
 
     return (
-        <div className="mainWeather container py-4">
+        <div className="mainWeather">
             {!props.loaded ? "" :
-                <div>
+                <div className="weatherContainer">
                     <h2>
                         {props.data.name}
                     </h2>
