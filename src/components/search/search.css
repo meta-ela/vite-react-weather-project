@@ -18,23 +18,3 @@
     padding: 0.75rem;
     color: white;
 }
-
-
-.btnLocalization {
-    background-color: transparent;
-    border: none;
-    font-weight: bold;
-    color: white;
-
-}
-
-.localizationCont {
-    color: white;
-    text-align: center;
-    height: 80px;
-    padding: 1rem;
-}
-
-.fa-location-dot {
-    font-size: 1.5rem;
-}
