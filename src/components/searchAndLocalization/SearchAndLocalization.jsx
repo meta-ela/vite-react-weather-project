@@ -15,7 +15,7 @@ function SearchAndLocalization(props) {
     }
 
     return (
-        <div className="searchBar h-100">
+        <div className="searchBar">
             <form onSubmit={handleSubmit}>
                 <div className="row gy-4 h-100 flex-column">
                     <div className="col">
@@ -32,9 +32,11 @@ function SearchAndLocalization(props) {
                     <div className="col">
                         <div>
                             <h4 className='mb-3'>Localization</h4>
-                            <div>
-                                <button className='btnAddCity'>
-                                    <i className="fa-regular fa-square-plus me-2"></i>
+                            <div className='localizationCont boxRadiusAndShadow backColorGradient'>
+                                <div>
+                                    <i className="fa-solid fa-location-dot"></i>
+                                </div>
+                                <button className='btnLocalization'>
                                     Add Localization
                                 </button>
                             </div>
