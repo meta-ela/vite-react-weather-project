@@ -1,0 +1,13 @@
+.btnContainerAddCity {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.boxCity{
+    padding: 1rem;
+    background-color: aquamarine;
+    width: 100%;
+    height: 100%;
+}

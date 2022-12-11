@@ -24,8 +24,8 @@ function HourlyForecast(props) {
 
     }, [props.coord])
 
-    const renderComponent = ()=> {
-        if((props.loaded == false) && (forecastLoaded == false)) {
+    const renderComponent = () => {
+        if ((props.loaded == false) && (forecastLoaded == false)) {
             return ""
         } else if ((props.loaded == true) && (forecastLoaded == true)) {
             return (<div>
@@ -37,17 +37,17 @@ function HourlyForecast(props) {
                     dataHourlyForecast.list.map((data) => {
                         const date = new Date(Date.parse(data.dt_txt))
                         const todaysDate = new Date()
-        
-                        if((date.getDate() == todaysDate.getDate()) && (date.getMonth() == todaysDate.getMonth())) {
+
+                        if ((date.getDate() == todaysDate.getDate()) && (date.getMonth() == todaysDate.getMonth())) {
                             return <div key={data.dt_txt}>
                                 <div>{Math.round(data.main.temp)}</div>
                                 <div>{date.getHours()}</div>
                             </div>
                         }
-                        
+
                     })
                 }</div>)
-            
+
         }
     }
 
