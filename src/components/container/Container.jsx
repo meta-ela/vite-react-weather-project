@@ -5,11 +5,10 @@ import './container.css';
 
 import CityList from '../cityList/CityList';
 import MainWeather from '../mainWeather/MainWeather';
-import SearchAndLocalization from '../searchAndLocalization/SearchAndLocalization';
+import Search from '../search/Search';
+import Localization from '../localization/Localization';
 import HourlyForecast from '../hourlyForecast/HourlyForecast';
 import PeriodForecast from '../periodForecast/PeriodForecast';
-
-import cloud from '../../img/cloud-prova.jpg';
 
 function Container() {
     const [city, setCity] = useState("Bologna");
@@ -48,37 +47,46 @@ function Container() {
 
     return (
         <div className="app container">
-            <div className="row mb-4">
-                <div className="col-8">
+            <div className="row gy-5 h-100">
+                <div className="col-lg-8">
                     <MainWeather
                         data={data}
                         loaded={loaded}
                     ></MainWeather>
                 </div>
-                <div className="col-4">
+
+                <div className="col-lg-4">
                     <CityList></CityList>
                 </div>
-            </div>
 
-            <div className="row">
-                <div className="col-8">
+                <div className="col-lg-2">
                     <HourlyForecast
                         coord={coord}
                         loaded={loaded}
                         tempNow={tempNow}
                     ></HourlyForecast>
+                </div>
 
-                    {/* <PeriodForecast
+                <div className="col-lg-6">
+                    <PeriodForecast
                         coord={coord}
                         loaded={loaded}
-                    ></PeriodForecast> */}
+                    ></PeriodForecast>
                 </div>
-                <div className="col-4">
-                    <SearchAndLocalization
-                        onHandleSubmit={getCityWeather}
-                        city={city}
-                        setCity={setCity}
-                    ></SearchAndLocalization>
+
+                <div className="col-lg-4">
+                    <div className="row gy-4 flex-column">
+                        <div className="col">
+                            <Search
+                                onHandleSubmit={getCityWeather}
+                                city={city}
+                                setCity={setCity}
+                            ></Search>
+                        </div>
+                        <div className="col">
+                            <Localization></Localization>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
