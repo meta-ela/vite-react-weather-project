@@ -9,6 +9,8 @@ import SearchAndLocalization from '../searchAndLocalization/SearchAndLocalizatio
 import HourlyForecast from '../hourlyForecast/HourlyForecast';
 import PeriodForecast from '../periodForecast/PeriodForecast';
 
+import cloud from '../../img/cloud-prova.jpg';
+
 function Container() {
     const [city, setCity] = useState("Bologna");
     const [data, setData] = useState({});
@@ -45,8 +47,8 @@ function Container() {
     }
 
     return (
-        <div className="app">
-            <div className="row">
+        <div className="app container position-relative">
+            <div className="row mb-4">
                 <div className="col-8">
                     <MainWeather
                         data={data}
