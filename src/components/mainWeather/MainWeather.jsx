@@ -1,5 +1,5 @@
-/* attenzione proprio css */
-import "./mainWeather.css"
+import "./mainWeather.css";
+import "../../css/index.css";
 
 function MainWeather(props) {
 
@@ -16,18 +16,18 @@ function MainWeather(props) {
     return (
         <div className="mainWeather">
             {!props.loaded ? "" :
-                <div className="weatherContainer">
-                    <h2>
+                <div className="weatherContainer boxRadiusAndShadow">
+                    <h3>
                         {props.data.name}
-                    </h2>
-                    <div>
+                    </h3>
+                    <div className="fw-bold">
                         {getTodaysDate()}
                     </div>
                     <div>
                         {props.data.weather[0].main}
                     </div>
-                    <div>
-                        {Math.round(props.data.main.temp)}° C
+                    <div className="tempContainer backColorGradient">
+                        {Math.round(props.data.main.temp)}°
                     </div>
                 </div>}
         </div>
