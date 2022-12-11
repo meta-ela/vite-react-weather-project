@@ -17,8 +17,8 @@
     align-items: center;
     position: absolute;
     top: 50%;
-    bottom: 50%;
-    left: -20px;
+    transform: translateY(-50%);
+    left: -30px;
     color: white;
     font-size: 2rem;
     font-weight: bold;

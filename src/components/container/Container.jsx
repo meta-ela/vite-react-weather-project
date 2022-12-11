@@ -47,7 +47,7 @@ function Container() {
     }
 
     return (
-        <div className="app container position-relative">
+        <div className="app container">
             <div className="row mb-4">
                 <div className="col-8">
                     <MainWeather

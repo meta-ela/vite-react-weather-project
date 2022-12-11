@@ -14,7 +14,7 @@ function MainWeather(props) {
     }
 
     return (
-        <div className="mainWeather">
+        <div className="mainWeather position-relative">
             {!props.loaded ? "" :
                 <div className="weatherContainer boxRadiusAndShadow">
                     <h3>

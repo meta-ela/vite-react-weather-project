@@ -5,9 +5,29 @@
     justify-content: center;
 }
 
+.btnAddCity {
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+}
+
 .boxCity{
     padding: 1rem;
     background-color: aquamarine;
     width: 100%;
     height: 100%;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
+
+.boxCity1 {
+    background: rgb(21,59,159);
+    background: linear-gradient(144deg, rgba(21,59,159,1) 35%, rgba(74,133,200,1) 100%);
+}
+
+.boxCity2 {
+    background: rgb(88,97,119);
+    background: linear-gradient(144deg, rgba(88,97,119,1) 35%, rgba(141,156,173,1) 100%);
+}
+

@@ -1,0 +1,19 @@
+.inputSearch {
+    padding: 2rem;
+    border: none;
+    color: grey;
+    font-weight: bold;
+    width: 100%;
+    flex: 1;
+}
+
+.btnSearch {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem;
+    color: white;
+}

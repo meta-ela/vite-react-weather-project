@@ -1,12 +1,13 @@
 import './searchAndLocalization.css';
+import '../../css/index.css';
 
 function SearchAndLocalization(props) {
-    const onInputsChange= (e) => {
+    const onInputsChange = (e) => {
         props.setCity(e.target.value);
         /* console.log('logging on input change'); */
     }
 
-    const handleSubmit= (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         props.onHandleSubmit();
         props.setCity("");
@@ -14,9 +15,33 @@ function SearchAndLocalization(props) {
     }
 
     return (
-        <div className="searchBar debugBorder">
+        <div className="searchBar h-100">
             <form onSubmit={handleSubmit}>
-                <input type="text" onChange={onInputsChange} value={props.city}/>
+                <div className="row gy-4 h-100 flex-column">
+                    <div className="col">
+                        <div>
+                            <h4 className='mb-3'>Search</h4>
+                            <div className='d-flex position-relative'>
+                                <input className='boxRadiusAndShadow inputSearch' type="text" onChange={onInputsChange} value={props.city} />
+                                <button className='btnSearch backColorGradient' type="submit">
+                                    <i className="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div>
+                            <h4 className='mb-3'>Localization</h4>
+                            <div>
+                                <button className='btnAddCity'>
+                                    <i className="fa-regular fa-square-plus me-2"></i>
+                                    Add Localization
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </form>
         </div>
     );
