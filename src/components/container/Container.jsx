@@ -76,14 +76,14 @@ function Container() {
 
                 <div className="col-lg-4">
                     <div className="row gy-4 flex-column h-100">
-                        <div className="col">
+                        <div className="col-6 col-sm-6 col-md-6 col-lg-12">
                             <Search
                                 onHandleSubmit={getCityWeather}
                                 city={city}
                                 setCity={setCity}
                             ></Search>
                         </div>
-                        <div className="col">
+                        <div className="col-6 col-sm-6 col-md-6 col-lg-12">
                             <Localization></Localization>
                         </div>
                     </div>

@@ -31,9 +31,10 @@
 #home-tab-pane, #profile-tab-pane{
     background-color: var(--bg-main-color);
     color: white;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 0rem 1rem 1rem 1rem;
     box-shadow: rgba(0, 0, 0, 30%) 6px 6px 20px;
+    height: 280px;
 }
 
 .card {

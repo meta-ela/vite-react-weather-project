@@ -3,7 +3,6 @@ import Sunny from '../../img/sunny.png';
 import Cloudy from '../../img/cloudy.png';
 
 function PeriodForecast(props) {
-    console.log(props.data.temp + ' dati da props');
 
     return (
         <div className="periodForecast h-100">
