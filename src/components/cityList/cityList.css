@@ -29,12 +29,6 @@
     background: linear-gradient(144deg, rgba(88,97,119,1) 35%, rgba(141,156,173,1) 100%);
 }
 
-
-.weatherImage {
-    width: 70px;
-    height: 70px;
-}
-
 .cityTemp {
     font-weight: bold;
     font-size: 2rem;

@@ -69,7 +69,7 @@ function Container() {
 
                 <div className="col-lg-6">
                     <PeriodForecast
-                        coord={coord}
+                        data={data}
                         loaded={loaded}
                     ></PeriodForecast>
                 </div>

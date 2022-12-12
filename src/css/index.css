@@ -21,6 +21,7 @@ body {
   place-items: center;
   /* width: 100%; */
   /* height: 100vh; */
+  background-color: #f1f1f1;
 }
 
 
@@ -41,4 +42,10 @@ body {
 
 h3,h4, .btnAddCity {
   color: var(--txt-color);
+}
+
+
+.weatherImage {
+  width: 70px;
+  height: 70px;
 }

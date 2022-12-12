@@ -1,0 +1,46 @@
+#root {
+    --bg-main-color: #5a81ea;
+    --bs-link-color: #01175f;
+    --bs-nav-link-color:var(--bs-link-color);
+    --bs-link-hover-color: #01175f;
+    --bs-nav-link-hover-color: var(--bs-link-hover-color);
+    --bs-nav-link-disabled-color: #01175f;;
+}
+
+
+.nav-tabs {
+    --bs-nav-tabs-border-width: 1px;
+    --bs-nav-tabs-border-color: #dee2e6;
+    --bs-nav-tabs-border-radius: 1rem;
+    --bs-nav-tabs-link-hover-border-color: var(--bg-main-color);
+    --bs-nav-tabs-link-active-color: white;
+    --bs-nav-tabs-link-active-bg: var(--bg-main-color);
+    --bs-nav-tabs-link-active-border-color: #dee2e6 #dee2e6 #fff;
+    border-bottom: var(--bs-nav-tabs-border-width) solid #dee2e600;
+}
+
+.nav-tabs .nav-link {
+    box-shadow: rgb(0 0 0 / 30%) 6px 0px 20px;
+    /* box-shadow: -1px -36px 57px -24px #000000; */
+}
+
+.nav-tabs .nav-link.active {
+    border-color: var(--bg-main-color);
+}
+
+#home-tab-pane, #profile-tab-pane{
+    background-color: var(--bg-main-color);
+    color: white;
+    padding: 1rem;
+    border-radius: 0rem 1rem 1rem 1rem;
+    box-shadow: rgba(0, 0, 0, 30%) 6px 6px 20px;
+}
+
+.card {
+    background-color: var(--bg-main-color);
+    box-shadow: rgba(0, 0, 0, 30%) 6px 6px 20px;
+    padding: 1rem;
+    text-align: center;
+    border: none;
+    border-radius: 1rem;
+}
