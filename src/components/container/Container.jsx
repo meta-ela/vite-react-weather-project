@@ -75,7 +75,7 @@ function Container() {
                 </div>
 
                 <div className="col-lg-4">
-                    <div className="row gy-4 flex-column">
+                    <div className="row gy-4 flex-column h-100">
                         <div className="col">
                             <Search
                                 onHandleSubmit={getCityWeather}

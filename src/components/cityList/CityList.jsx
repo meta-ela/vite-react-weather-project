@@ -35,8 +35,8 @@ function CityList() {
             .then(res => {
                 setData(res);
                 setLoaded(true);
-                console.log("city list");
-                console.log(res)
+                /* console.log("city list"); */
+                /* console.log(res) */
             })
             .catch((err) => {
                 alert(err);
